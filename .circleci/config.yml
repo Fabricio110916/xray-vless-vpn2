@@ -11,9 +11,7 @@ jobs:
           command: sudo apt-get install -y -qq ninja-build
       - run:
           name: Compilar APK
-          command: |
-            cd app
-            gradle assembleDebug --no-daemon
+          command: gradle assembleDebug --no-daemon
       - store_artifacts:
           path: app/build/outputs/apk/debug/
           destination: apk/
