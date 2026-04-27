@@ -1,0 +1,23 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: cimg/android:2024.01.1
+    steps:
+      - checkout
+      - run:
+          name: Compilar APK
+          command: |
+            cd V2rayNG
+            chmod +x gradlew
+            ./gradlew assembleDebug --no-daemon
+      - store_artifacts:
+          path: V2rayNG/app/build/outputs/apk/debug/
+          destination: apk/
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build
