@@ -12,8 +12,8 @@ jobs:
       - run:
           name: Compilar APK
           command: |
-            chmod +x gradlew
-            ./gradlew assembleDebug --no-daemon
+            cd app
+            gradle assembleDebug --no-daemon
       - store_artifacts:
           path: app/build/outputs/apk/debug/
           destination: apk/
