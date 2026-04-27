@@ -7,13 +7,15 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Instalar Ninja
+          command: sudo apt-get install -y -qq ninja-build
+      - run:
           name: Compilar APK
           command: |
-            cd V2rayNG
             chmod +x gradlew
             ./gradlew assembleDebug --no-daemon
       - store_artifacts:
-          path: V2rayNG/app/build/outputs/apk/debug/
+          path: app/build/outputs/apk/debug/
           destination: apk/
 
 workflows:
