@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="conectar">#4ecca3</color>
+    <color name="desconectar">#e94560</color>
+    <color name="conectado">#4ecca3</color>
+    <color name="desconectado">#8899aa</color>
+</resources>
