@@ -82,7 +82,7 @@ public class Tun2Socks extends Thread implements StreamGobbler.OnLineListener {
 
 
 			if (fileTun2Socks == null){
-				AppState.INSTANCE.addLog("tun2socks: binário não encontrado!");
+				LogManager.addLog("tun2socks: binário não encontrado!");
                                 throw new IOException("Bin Tun2Socks não encontrado");
 			}
 
@@ -128,9 +128,9 @@ public class Tun2Socks extends Thread implements StreamGobbler.OnLineListener {
 				stderrGobbler.start();
 
 				// send Fd
-				AppState.INSTANCE.addLog("tun2socks: enviando fd=" + mVpnInterfaceFileDescriptor.getFd());
+				LogManager.addLog("tun2socks: enviando fd=" + mVpnInterfaceFileDescriptor.getFd());
                                 if (!sendFd(mVpnInterfaceFileDescriptor, file_path)) {
-					AppState.INSTANCE.addLog("tun2socks: falha sendFd!");
+					LogManager.addLog("tun2socks: falha sendFd!");
                                         throw new IOException("Falha ao enviar Fd para sock, talvez isso não seja suportado em seu aparelho. Entre em contato com o desenvolvedor.");
 				}
 
