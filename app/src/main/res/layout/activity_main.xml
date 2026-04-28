@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1a1a2e"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="XRAY VLESS VPN"
+        android:textColor="#e94560"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="center"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/configEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="vless://..."
+            android:textColor="#ffffff"
+            android:maxLines="3"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+        <Button android:id="@+id/pasteButton" android:layout_width="0dp" android:layout_height="50dp" android:layout_weight="1" android:text="COLAR" android:layout_marginEnd="4dp"/>
+        <Button android:id="@+id/importButton" android:layout_width="0dp" android:layout_height="50dp" android:layout_weight="1" android:text="IMPORTAR" android:layout_marginStart="4dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="12dp"
+        android:gravity="center">
+        <View android:id="@+id/statusIndicator" android:layout_width="12dp" android:layout_height="12dp" android:background="@drawable/status_circle" android:layout_marginEnd="8dp"/>
+        <TextView android:id="@+id/statusText" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Desconectado" android:textColor="#8899aa" android:textSize="14sp"/>
+        <Button android:id="@+id/connectButton" android:layout_width="120dp" android:layout_height="44dp" android:text="CONECTAR" android:textSize="14sp"/>
+    </LinearLayout>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="LOGS:" android:textColor="#e94560" android:textSize="14sp" android:layout_marginTop="16dp"/>
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:background="#0d1117" android:padding="8dp">
+        <TextView android:id="@+id/logTextView" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Aguardando..." android:textColor="#4ecca3" android:textSize="11sp" android:fontFamily="monospace"/>
+    </ScrollView>
+
+    <Button android:id="@+id/copyLogButton" android:layout_width="match_parent" android:layout_height="40dp" android:text="COPIAR LOGS" android:textSize="12sp" android:layout_marginTop="8dp"/>
+</LinearLayout>
